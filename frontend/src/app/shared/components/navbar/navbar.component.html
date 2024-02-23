@@ -1,0 +1,160 @@
+<header>
+  <div class="container-fluid">
+    <div class="row py-3 border-bottom">
+      <div class="col-sm-4 col-lg-3 text-sm-start">
+        <div class="main-logo">
+          <a (click)="navigateHome()">
+            <img
+              src="../../../../assets/images/header/logo.png"
+              alt="logo"
+              class="img-fluid"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-6 d-lg-block d-none">
+        <app-search-input></app-search-input>
+      </div>
+
+      <div
+        class="col-sm-8 col-lg-3 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-sm-end"
+      >
+        <ul
+          *ngIf="loggedInUser != null"
+          class="d-flex justify-content-end list-unstyled m-0"
+        >
+          <li>
+            <a
+              (click)="openEditDialog()"
+              class="rounded-circle bg-light p-2 mx-1"
+            >
+              <i class="fa fa-user"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              (click)="navigateToMyFavoriteProducts()"
+              class="rounded-circle bg-light p-2 mx-1"
+            >
+              <i class="fa fa-heart"></i>
+            </a>
+          </li>
+        </ul>
+        <a
+        #dropdownMenu
+          *ngIf="loggedInUser != null"
+          class="nav-link dropdown-toggle"
+          role="button"
+          id="pages"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          >Pages</a
+        >
+        <ul class="dropdown-menu" aria-labelledby="pages">
+          <li>
+            <a (click)="navigateToMyProducts()" class="dropdown-item"
+              >My Products
+            </a>
+          </li>
+          <li>
+            <a (click)="navigateToMyChats()" class="dropdown-item">Chats </a>
+          </li>
+          <li>
+            <a (click)="addProduct()" class="dropdown-item">Add a Product </a>
+          </li>
+          <li>
+            <a (click)="logout()" class="dropdown-item">Logout </a>
+          </li>
+        </ul>
+
+        <a
+          *ngIf="loggedInUser == null"
+          (click)="openLoginForm()"
+          class=""
+          role="button"
+          id="pages"
+          aria-expanded="false"
+          >Login/Register</a
+        >
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid burger-menu">
+    <div class="row py-3">
+      <div
+        class="d-flex justify-content-center justify-content-sm-between align-items-center"
+      >
+        <nav class="main-menu d-flex navbar navbar-expand-lg p-3">
+          <div class="col-2">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+              #offcanvasMenu
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="col-9">
+            <app-search-input class="hideSearchInput"></app-search-input>
+          </div>
+
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header justify-content-center">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+                #toggleButton
+              ></button>
+            </div>
+
+            <div class="offcanvas-body">
+              <ul
+                *ngIf="loggedInUser != null"
+                class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0"
+              >
+                <li>
+                  <a (click)="navigateToMyProducts()" class="dropdown-item"
+                    >My Products
+                  </a>
+                </li>
+                <li>
+                  <a (click)="navigateToMyChats()" class="dropdown-item"
+                    >Chats
+                  </a>
+                </li>
+                <li>
+                  <a (click)="addProduct()" class="dropdown-item"
+                    >Add a Product
+                  </a>
+                </li>
+                <li>
+                  <a (click)="logout()" class="dropdown-item">Logout </a>
+                </li>
+              </ul>
+              <ul   *ngIf="loggedInUser == null"
+                class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0"
+              >
+                <li>
+                  <a (click)="openLoginForm()" class="dropdown-item"
+                    >LoginRegister
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,171 @@
+<div class="addProduct scrollableForm">
+<div >
+  <form [formGroup]="editForm" class="">
+    <h1 class="modal-title" id="updateUserModalLabel">Create a product</h1>
+    <div class="form-group mb-3">
+      <label for="firstName" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        formControlName="title"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        type="textarea"
+        style="height: 10rem; resize: none"
+        class="form-control"
+        id="description"
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price" class="form-label">Price</label>
+      <input
+        type="text"
+        class="form-control"
+        id="price"
+        formControlName="price"
+      />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input
+        type="text"
+        class="form-control"
+        id="location"
+        formControlName="location"
+      />
+    </div>
+
+    <!--dropdown menu-->
+
+    <div class="form-group mb-3">
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="categoryDropdown"
+          data-bs-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          {{selectedCategory == "" ? "Select a Category" : selectedCategory}}
+        </button>
+        <div
+          class="dropdown-menu dropdown-scrollable"
+          aria-labelledby="categoryDropdown"
+        >
+          <input
+            type="text"
+            class="form-control"
+            id="searchInput"
+            placeholder="Search categories..."
+            formControlName="inputField"
+            (keyup)="filterCategories($event)"
+          />
+          <ul class="list-unstyled">
+            <li *ngFor="let item of filteredCategories">
+              <a
+                class="dropdown-item bold"
+                (click)="onCategorySelected(item.name)"
+                >{{ item.name }}</a
+              >
+              <ul class="list-unstyled" *ngIf="item.subCategories">
+                <li *ngFor="let subCategory of item.subCategories">
+                  <a
+                    class="dropdown-item subcategory"
+                    (click)="onCategorySelected(subCategory.name)"
+                    >{{ subCategory.name }}</a
+                  >
+                  <ul
+                    class="list-unstyled"
+                    *ngIf="subCategory.subSubCategories"
+                  >
+                    <li
+                      *ngFor="
+                        let subSubCategory of subCategory.subSubCategories
+                      "
+                    >
+                      <a
+                        class="dropdown-item subsubcategory"
+                        (click)="onCategorySelected(subSubCategory.name)"
+                        >{{ subSubCategory.name }}</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div
+        class="preview-images-zone"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div
+          class="preview-image preview-show-1"
+          cdkDragLockAxis="y"
+          (cdkDragStarted)="onDragStart()"
+          (cdkDragEnded)="onDragEnd()"
+          *ngFor="let previewImage of previewImages; index as i"
+          cdkDrag
+        >
+          <div
+            *ngIf="isDragging === false"
+            class="image-cancel"
+            (click)="removePreview(i)"
+          >
+            x
+          </div>
+          <div class="image-zone">
+            <img id="pro-img-1" src="{{ previewImage }}" />
+          </div>
+          <div *ngIf="isDragging === false" class="tools-edit-image">
+            <a data-no="1" class="btn btn-light btn-edit-image">edit</a>
+          </div>
+          <img class="dragPreviewImage" *cdkDragPreview [src]="previewImage" />
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <div class="form-group mb-3">
+      <label for="image_url" class="form-label">Image URL</label>
+      <input
+        type="file"
+        multiple
+        name="upload"
+        accept=".jpg,.jpeg,.png"
+        id="upload"
+        formControlName="image_url"
+        class="upload-box form-control"
+        (change)="selectFile($event)"
+        placeholder="Upload File"
+        aria-label="Upload File"
+      />
+    </div>
+
+    <div class="modal-footer mb-3">
+      <button
+        type="button"
+        id=""
+        data-dismiss="modal"
+        class="btn btn-secondary"
+      >
+        Close
+      </button>
+      <button data-dismiss="modal" class="btn btn-primary" (click)="save()">
+        Save changes
+      </button>
+    </div>
+  </form>
+</div>
+</div>

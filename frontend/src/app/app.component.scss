@@ -1,0 +1,20 @@
+.cdk-global-overlay-wrapper, .cdk-overlay-container, .cdk-global-scrollblock {
+    z-index: 9999 !important;
+  }
+
+  
+  html,
+  body { 
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#240c3b, #34194f);
+    color: rgb(0, 0, 0);
+    margin: 0;
+    margin: 0;
+   
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  .postionHeaderBody{
+    display: flex;
+    flex-direction: column;
+  }

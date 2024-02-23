@@ -1,0 +1,88 @@
++---------------------+--------------------------------------------------------+--------+--------------------------------------------------------------+
+|       Section       |                      Endpoint                          | Method |                           Description                        |
++---------------------+--------------------------------------------------------+--------+--------------------------------------------------------------+
+| Chat Message        | /chatMessages?chatId={chatId}&page={page}&size={size}  | GET    | Get all chat messages by chatId with pagination              |
+|                     | /chatMessages/{id}                                     | GET    | Get a chat message by its ID                                 |
+|                     | /chatMessages                                          | POST   | Add a new chat message                                       |
++---------------------+--------------------------------------------------------+--------+--------------------------------------------------------------+
+| Chat                | /chats                                                 | GET    | Get all chats                                                |
+|                     | /chats?userId={userId}                                 | GET    | Get all chats for a user (by user ID)                        |
+|                     | /chats/{id}                                            | GET    | Get a chat by its ID                                         |
+|                     | /chats                                                 | POST   | Add a new chat                                               |
++---------------------+--------------------------------------------------------+--------+--------------------------------------------------------------+
+| Product             | /products?page={page}&size={size}                      | GET    | Get all products with pagination                             |
+|                     | /products/{id}                                         | GET    | Get a product by its ID                                      |
+|                     | /products?category={category}&page={page}&size={size}  | GET    | Get all products by its category with pagination             |
+|                     | /products?userId={userId}                              | GET    | Get all products by userId                                   |
+|                     | /products                                              | POST   | Add a new product                                            |
+|                     | /products/{id}                                         | DELETE | Delete a product by its ID                                   |
++---------------------+--------------------------------------------------------+--------+--------------------------------------------------------------+
+| Product Images      | /productImages                                         | GET    | Get all product images                                       |
+|                     | /productImages?productId={productId}                   | GET    | Get product images by productId                              |
+|                     | /productImages/{id}                                    | GET    | Get a product image by its ID                                |
+|                     | /productImages                                         | POST   | Add a new product image                                      |
++---------------------+--------------------------------------------------------+--------+--------------------------------------------------------------+
+| User                | /users                                                 | GET    | Get all users (secure version)                               |
+|                     | /users/{id}                                            | GET    | Get a user by its ID (secure version)                        |
+|                     | /users/{id}                                            | PUT    | Update a user                                                |
++---------------------+--------------------------------------------------------+--------+--------------------------------------------------------------+
+
+
+Example for getting a specific Chatsmessage:
+  this.axiosService.request("GET", "/chatMessages/1 ", {})
+      .then(response => { this.chatMessages = response.data; console.log(this.chatMessages) });
+
+###Structures:
+
+1. **ChatDto**
+   - id: Long
+   - user1: UserDtoSecure
+   - user2: UserDtoSecure
+   - product: ProductDto
+
+2. **ChatMessageDto**
+   - id: Long
+   - content: String
+   - chatId: Long
+   - sender: UserDtoSecure
+   - sentTimestampMillis: String
+   - imageUrl: String
+
+3. **CredentialsDto**
+   - login: String
+   - password: char[]
+
+4. **ErrorDto**
+   - message: String
+
+5. **ProductDto**
+   - id: Long
+   - title: String
+   - description: String
+   - price: double
+   - location: String
+   - imageUrl: String
+   - user: UserDtoSecure
+   - seenBy: Long
+   - createdAt: String
+
+6. **SignupDto**
+   - firstName: String
+   - secondName: String
+   - login: String
+   - password: char[]
+
+7. **UserDto**
+   - id: Long
+   - firstName: String
+   - secondName: String
+   - login: String
+   - token: String
+   - joined: String
+
+8. **UserDtoSecure**
+   - id: Long
+   - firstName: String
+   - secondName: String
+   - imageUrl: String
+   - joined: String

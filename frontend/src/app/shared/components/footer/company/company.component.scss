@@ -1,0 +1,53 @@
+.company > * {
+    //font-size: x-large;
+    padding-bottom: 5rem;
+    color: black;
+}
+
+.company {
+    margin: 5% 25%
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 30% 0 20%;
+}
+
+.contact-us{
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.contact-us:hover {
+    color: white;
+    transform: scale(1.5);
+    background-color: gray;
+    border-radius: 10%;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: #333;
+}
+
+img {
+    width: 100px;
+    margin-left: 0.5rem;
+}
+
+.developers {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.developers > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

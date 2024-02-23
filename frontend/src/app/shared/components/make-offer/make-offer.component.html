@@ -1,0 +1,48 @@
+
+<div class="">
+    <div class="container px-5 my-5">
+      <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+        <h1>Make an Offer</h1>
+
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            type="textarea"
+            style="height: 10rem; resize: none"
+            class="form-control"
+            aria-label="message…"
+            placeholder="Write message…"
+            [(ngModel)]="message"
+            name="message"
+          ></textarea>
+          <label for="nachricht">Nachricht</label>
+          <div
+            class="invalid-feedback"
+            data-sb-feedback="nachricht:required"
+          >
+            Nachricht is required.
+          </div>
+        </div>
+
+        <div class="d-none" id="submitSuccessMessage">
+         
+        </div>
+        <div class="d-none" id="submitErrorMessage">
+          <div class="text-center text-danger mb-3">
+            Error sending message!
+          </div>
+        </div>
+        <div class="d-grid">
+          <button
+            class="btn btn-primary btn-lg"
+            id="submitButton"
+            (click)="sendMessage()"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+

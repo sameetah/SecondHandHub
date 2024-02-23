@@ -1,0 +1,35 @@
+.product {
+  margin-bottom: 20px;
+}
+
+.card-img-thumbnail {
+  height: 200px; /* or whatever height you desire */
+  object-fit: cover;
+  width: 100%; 
+}
+
+.card {
+  height: auto; 
+  transition: all 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+
+.custom-margin{margin-top:85px;}
+
+@media (max-width: 375px) {
+  .mobile-sidebar-container {
+    margin-top: 20px;  
+    margin-bottom: 20px;  
+    
+  }
+}
+
+
+

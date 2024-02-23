@@ -1,0 +1,15 @@
+.rounded-image-button {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.rounded-image-button img {
+    width: 100px; /* Adjust as necessary */
+    height: 100px; /* Adjust as necessary */
+}
+
+.userImage{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

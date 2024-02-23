@@ -1,0 +1,27 @@
+security:
+  jwt:
+    token:
+      secret-key: my-secret-key
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3309/db
+    username: root
+    password: pass123
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+server:
+  servlet:
+    context-path: /api

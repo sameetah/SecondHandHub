@@ -1,0 +1,29 @@
+
+   <div class="row">
+      <div *ngFor="let user of users" class="col-md-6 col-xl-3">
+         <div class="card m-b-30">
+            <div class="card-body row">
+               <div class="col-6">
+                  <a ><img src="{{user?.imageUrl}}" alt="" class="img-fluid rounded-circle w-60"></a>
+               </div>
+               <div class="col-6 card-title align-self-center mb-0">
+                  <h5>{{user?.firstName}}</h5>
+                  <p class="m-0">{{user?.secondName}}</p>
+               </div>
+            </div>
+            <button (click)="addProduct()">Test</button>
+            <button (click)="addChat(user)">Test</button>
+
+            <div class="card-body">
+               <div class="float-right btn-group btn-group-sm">
+                  <a (click)="onOpenModal(user)" class="btn btn-primary tooltips" data-placement="top"
+                     data-original-title="Edit">Edit<i class="fa fa-pencil"></i> </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+  
+
+

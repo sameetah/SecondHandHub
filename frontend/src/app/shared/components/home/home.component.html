@@ -1,0 +1,152 @@
+<section
+  class="py-3"
+  style="
+    background-image: url('../../../../assets/images/background2.jpg');
+    background-repeat: no-repeat;
+    background-size:contain;
+  "
+>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="banner-blocks">
+          <div class="banner-ad large bg-info block-1">
+            <div
+              id="myCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="10000"
+            >
+              <!-- Slides -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row banner-content p-5">
+                    <div class="content-wrapper col-md-7">
+                      <div class="categories my-3">Spooky Kids Toys</div>
+                      <h3 class="display-4">Trick or Treat with Toys</h3>
+                      <p>
+                        Creepy crawlies, fun and fright! Find the perfect
+                        Halloween toys for kids' delight.
+                      </p>
+                     
+                    </div>
+                    <div class="img-wrapper col-md-5">
+                      <img
+                        src="../../../../assets/images/banner2.png"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row banner-content p-5">
+                    <div class="content-wrapper col-md-7">
+                      <div class="categories mb-3 pb-3">Tech for Treats</div>
+                      <h3 class="banner-title">Ghoulishly Great Gadgets</h3>
+                      <p>
+                        Spirits of tech, spooky delight! Explore our
+                        Halloween-themed gadgets for a thrilling night.
+                      </p>
+                      
+                    </div>
+                    <div class="img-wrapper col-md-5">
+                      <img
+                        src="../../../../assets/images/banner3.png"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row banner-content p-5">
+                    <div class="content-wrapper col-md-7">
+                      <div class="categories mb-3 pb-3">Bikes & Brooms</div>
+                      <h3 class="banner-title">Witchy Rides & Thrills</h3>
+                      <p>
+                        Fly or ride, it's your choice! Discover enchanting bikes
+                        and brooms for your spooky voice.
+                      </p>
+                      
+                    </div>
+                    <div class="img-wrapper col-md-5">
+                      <img
+                        src="../../../../assets/images/banner2.png"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a
+                class="carousel-control-prev"
+                role="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </a>
+              <a
+                class="carousel-control-next"
+                role="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="banner-ad bg-success-subtle block-2"
+            style="
+              background: url('../../../../assets/images/header/ad-image-2.png') no-repeat;
+              background-position: right bottom;
+            "
+          >
+            <div class="row banner-content p-5">
+              <div class="content-wrapper col-md-7">
+                <div class="categories sale mb-3 pb-3">avg. 50% off</div>
+                <h3 class="banner-title">Home & Living</h3>
+               
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="banner-ad bg-danger block-3"
+            style="
+              background: url('../../../../assets/images/header/ad-image-1.png') no-repeat;
+              background-position: right bottom;
+            "
+          >
+            <div class="row banner-content p-5">
+              <div class="content-wrapper col-md-7">
+                <div class="categories sale mb-3 pb-3">avg. 15% off</div>
+                <h3 class="item-title">Food & Baverage</h3>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- / Banner Blocks -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-categorie-overview></app-categorie-overview>
+<app-newest-products title="Newest Products" endpointAll="/products/latest" endpoint="/products" defaultDirection="DESC" uniqueId="newest"></app-newest-products>
+<app-reduced-cards></app-reduced-cards>
+<app-recommended></app-recommended>
+<app-newest-products title="Oldest Products" endpointAll="/products" endpoint="/products" defaultDirection="ASC" uniqueId="oldest"></app-newest-products>
+<app-news-letter-card></app-news-letter-card>

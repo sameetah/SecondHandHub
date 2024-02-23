@@ -1,0 +1,120 @@
+<section class="py-sm-0 py-md-5 mb-md-5" style="background: url(images/background-pattern.jpg);">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between">
+        <h1 class="page-title pb-2">My Favorites</h1>
+       
+      </div>
+    </div>
+  </section>
+  <div class="shopify-grid">
+    <div class="container-fluid">
+      <div class="row g-5">
+        <aside class="col-md-2">
+          <div class="sidebar">
+            <div class="widget-menu">
+              <div class="widget-search-bar">
+                <form role="search" method="get" class="d-flex position-relative">
+                  <form class="d-flex mt-3 gap-0" action="index.html">
+                    <input #search (input)="filterBySearchInput(search.value)" class="form-control form-control-lg rounded-2 bg-light" type="text" placeholder="Search here" aria-label="Search here">
+                </form>
+                </form>
+              </div>
+            </div>
+            <div class="widget-product-categories pt-5">
+              <h5 class="widget-title">Categories</h5>
+              <ul class="product-categories sidebar-list list-unstyled">
+                <li class="cat-item">
+                  <a (click)="filterProductsByCategory('all')" >All</a>
+                </li>
+                <li  *ngFor="let category of categories" class="cat-item">
+                  <a (click)="filterProductsByCategory(category)" class="nav-link">{{category}}</a>
+                </li>
+              
+              </ul>
+            </div>
+   
+            <div class="widget-price-filter pt-3">
+              <h5 class="widget-titlewidget-title">Filter By Price</h5>
+              <ul class="product-tags sidebar-list list-unstyled">
+                <li class="tags-item">
+                  <a (click)="filterProductsByPrice(0)" class="nav-link">All</a>
+                </li>
+                <li class="tags-item">
+                  <a (click)="filterProductsByPrice(10)" class="nav-link">Less than $100</a>
+                </li>
+                <li class="tags-item">
+                  <a (click)="filterProductsByPrice(100)" class="nav-link">To 100€</a>
+                </li>
+                <li class="tags-item">
+                  <a (click)="filterProductsByPrice(500)" class="nav-link">To 500€</a>
+                </li>
+                <li class="tags-item">
+                  <a (click)="filterProductsByPrice(1000)" class="nav-link">To 1000€</a>
+                </li>
+                <li class="tags-item">
+                  <a (click)="filterProductsByPrice(10000)" class="nav-link">to 10000€</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+
+        <main class="col-md-10">
+          <div class="filter-shop d-flex justify-content-between">
+            <div class="showing-product">
+              <p>{{products.length}} results</p>
+            </div>
+          
+          </div>
+          
+          <div class="product-grid row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+                
+            <div *ngFor="let product of products" class="col">
+                <div class="product-item">
+
+                    <figure>
+                      <a
+                        (click)="navigateToProduct(product)"
+                        title="Product Title"
+                      >
+                        <img [src]="product.imageUrl" class="tab-image"  />
+                      </a>
+                    </figure>
+                    <div>
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <h3>
+                        {{
+                          product.title.length > 16
+                            ? (product.title | slice : 0 : 16) + "..."
+                            : product.title
+                        }}
+                      </h3>
+                      <span class="price">{{ product.price }} €</span>
+                    </div>
+
+                    <div
+                      class="d-flex align-items-center justify-content-between"
+                    >
+                      <span class="qty">{{
+                        product.createdAt | relativeTime
+                      }}</span>
+                      <a  class="rating nav-link">Contact</a>
+                    </div></div>
+                  </div>
+            </div>
+
+          
+
+
+          </div>
+          <!-- / product-grid -->
+
+         
+
+        </main>
+        
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,42 @@
+<div class="limiter">
+  <c-carousel [dark]="true" [wrap]="false">
+    <c-carousel-indicators></c-carousel-indicators>
+    <c-carousel-inner>
+      <c-carousel-item *ngFor="let slide of slides; index as i">
+        <div class="row">
+          <!-- Product 1-5 -->
+          <ng-container *ngFor="let product of products.slice(0, 5)">
+            <div class="col">
+              <div class="title"><h1>Clothes</h1></div>
+              <div class="product">
+               <div class="productImageContainer"> <div class="ribbon">
+                <img
+                  class="ribbonImage"
+                  src="../../../../../assets/images/PNG/Halloween2.png"
+                  style="width: 50px"
+                  alt=""
+                />
+              </div>
+              <img [src]="product.image" alt="Product Image" /></div>
+
+                <h3>{{ product.name }}</h3>
+
+                <div class="productDetails">
+                  <h3>{{ product.price }}</h3>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </c-carousel-item>
+    </c-carousel-inner>
+    <c-carousel-control
+      caption="Previous"
+      direction="prev"
+    ></c-carousel-control>
+    <c-carousel-control caption="Next" direction="next"></c-carousel-control>
+  </c-carousel>
+
+  <!-- <div *ngFor="let _ of [].constructor(50)" class="snowflake"></div>
+ -->
+</div>

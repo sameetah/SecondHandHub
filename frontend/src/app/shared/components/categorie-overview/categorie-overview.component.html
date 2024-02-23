@@ -1,0 +1,53 @@
+<section class="py-5 overflow-hidden">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div
+          class="section-header d-flex flex-wrap justify-content-between mb-5"
+        >
+          <h2 class="section-title">Category</h2>
+
+          <div class="d-flex align-items-center">
+            <a class="btn-link text-decoration-none">View All Categories →</a>
+            <div class="swiper-buttons">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center my-3">
+      <div class="row mx-auto my-auto justify-content-center">
+        <div class="">
+          <p-carousel
+            [value]="categories"
+            [circular]="false"
+            [responsiveOptions]="responsiveOptions"
+            [showIndicators]="false"
+            [circular]="true"
+          >
+            <ng-template let-category pTemplate="item">
+              <div class="">
+                <div class="category-carousel swiper item" #carouselItem>
+                  <div class="swiper-wrapper">
+                    <a
+                      [routerLink]="['/category', category.name]"
+                      class="nav-link category-item swiper-slide"
+                      (click)="displaySubSubCategory(category)"
+                    >
+                      <i
+                        class="{{ category.icon }}"
+                        style="font-size: 50px"
+                      ></i>
+                      <h3 class="category-title">{{ category.name }}</h3>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </p-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

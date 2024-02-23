@@ -1,0 +1,88 @@
+<div class="get-help" id="get-help">
+    <p>Need assistance with your second-hand treasures?
+        <br>We've got you covered! Our support team is here to help you every step of the way.
+    </p>
+
+    <div class="FAQ" id="FAQ">
+
+        <h2 class="fw-bold">Frequently Asked Questions</h2>
+
+        <p>
+            <p class="fw-bold">Q1: How can I search for specific items on your website? </p>
+            A: You can easily search for items by using our search bar and applying various filters such as category,
+            price range, and location.
+
+        <p>
+            <p class="fw-bold">Q2: Is it safe to buy second-hand items on your platform? </p>
+            A: Absolutely. We prioritize your safety and satisfaction. We guarantee the authenticity and quality of
+            items listed on our platform.
+            Sellers undergo a vetting process, and we offer secure payment options.
+            Your peace of mind is important to us, and we stand by our commitment to making your buying experience
+            secure and satisfying.
+
+
+        <p>
+            <p class="fw-bold"> Q3: Are the second-hand items on your platform in good condition? </p>
+            A: Yes, we strive to ensure the quality of items listed on our platform.
+            Sellers are encouraged to provide accurate descriptions and images of their items, and many of them offer
+            items in excellent or like-new condition.
+            We also have a rating and review system, allowing buyers to share their experiences and help you make
+            informed decisions.
+        <p>
+            <p class="fw-bold"> Q4: How do I sell items on your platform? </p>
+
+            A: Selling your second-hand items on our platform is easy. First, create an account if you haven't already.
+            Then, list your items by providing detailed descriptions and images. Set a competitive price, and your items
+            will be visible to potential buyers. Once a buyer makes a purchase, follow our simple shipping instructions
+            to send the item securely.
+        
+    </div>
+
+    <div class="shipping" id="shipping">
+        <h2 class="fw-bold">
+            Shipping
+        </h2>
+        <p>
+            Shipping Made Easy
+            We offer multiple shipping options to cater to your needs, from standard to express delivery.
+            All items are carefully packaged to ensure they reach you in the best possible condition.
+            You can track your orders in real-time, so you know when to expect your second-hand treasures.
+        </p>
+    </div>
+
+    <div class="returns" id="returns">
+        <h2 class="fw-bold"> Returns </h2>
+        <p>
+            Easy Returns & Refunds.
+            We understand that sometimes a second-hand item might not be exactly what you expected. Our hassle-free
+            return process allows you to return items within 30 days.
+            Refunds are processed promptly, ensuring a smooth experience for our customers.
+        </p>
+    </div>
+
+    <div class="payment-options" id="payment-options">
+        <h2 class="fw-bold"> Payment Options</h2>
+        <p>
+            We offer a variety of secure payment methods, including credit/debit cards, PayPal, and more.
+            Your financial information is encrypted and secure, providing a safe environment for your transactions.
+        </p>
+    </div>
+
+    <div class="contact-us" id="contact-us">
+        <h2 class="fw-bold">Contact Us</h2>
+        <div>
+            Have a question or need assistance? Our support team is available to help you.
+            You can reach us through our contact form or by emailing support@secondhandhub.com.
+            We aim to respond to your inquiries within 24 hours.
+            <br>
+            Or you can fill out the below form and we'll get back as soon as possible!
+            <div class="form">
+                <input type="email" placeholder="Type your email" [(ngModel)]="email">
+                <input type="text" placeholder="Type your message" [(ngModel)]="message">
+                <button (click)="submitForm()">Submit</button>
+                <p id="responseMessage"> {{ response }} </p>
+            </div>
+        </div>
+    </div>
+
+</div>

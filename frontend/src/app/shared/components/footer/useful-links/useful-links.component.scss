@@ -1,0 +1,153 @@
+  .useful-links > * {
+    padding-bottom: 10rem;
+    color: black;
+  }
+  
+  .useful-links {
+    margin: 5% 20%
+  }
+
+
+  h2 {
+      padding-left: 3%;
+      //font-weight: 200;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+
+  }
+
+  h2::after {
+      content: "";
+      display: block;
+      width: 45px;
+      height: 2px;
+      background-color: #333;
+  }
+
+  form {
+      padding: 3%;
+  }
+
+  #email {
+      width: 250px;
+      border: none;
+      border-bottom: 2px solid #a4aaaf;
+      padding: 10px;
+      font-size: 16px;
+      outline: none;
+  }
+
+  form * {
+      padding: 0.5rem;
+      border-radius: 10px;
+      margin-right: 5px;
+  }
+
+  form p {
+     // position: absolute;
+  }
+
+  .submit-button {
+      width: 100px;
+      background: #333435;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+      border-bottom: 2px solid #a4aaaf;
+      font-size: 16px;
+  }
+
+  .submit-button:hover {
+      background: #a8acb4;
+      transform: scale(1.05);
+  }
+
+  .offers {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .mobile-app-text {
+      padding: 0 10%;
+
+  }
+
+  .download-buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      gap: 10px;
+  }
+
+  .download-buttons i {
+      font-weight: 200;
+      width: 50px;
+      height: 50px;
+  }
+
+  .download-buttons>button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 30px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      background: transparent;
+      border-radius: 5px;
+      outline: 1px solid gray;
+      transition: background-color 0.3s, color 0.3s;
+      //background-color: lightgrey;
+      //background: linear-gradient(45deg, #3498db, #9b59b6);
+      background: linear-gradient(45deg, #edf1fc, #7a95a7);
+  }
+
+  .download-buttons>button:hover {
+      //background-color: #bbbbbb;
+      //background-color: gray;
+      background: linear-gradient(45deg, #7a95a7, #edf1fc);
+      color: white;
+      font-weight: normal;
+      transform: scale(1.05);
+  }
+
+  .bold-text {
+      font-weight: bold;
+  }
+
+  .offers>p {
+      position: block;
+  }
+
+  .accessibility {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+  }
+
+  .accessibility-text {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+  }
+
+  .img-acc,
+  .img-off {
+      width: 350px;
+      height: auto;
+      border-radius: 10%;
+  }
+
+  @media(max-width: 767px){
+    .useful-links {
+        margin: 5% 0%
+      }
+  }
