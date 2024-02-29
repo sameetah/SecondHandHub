@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # secondhandhub
 =======
 # Project 3 Scaffold
@@ -21,4 +21,4 @@ This repo contains your backend and your frontend for project 3.
   - It is preferred to use **Visual Studio Code** to open this project / folder
   - Your frontend will be available at <http://localhost:4200> by default
 
->>>>>>> master
+
