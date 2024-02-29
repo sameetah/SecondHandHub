@@ -1,0 +1,67 @@
+<div class="useful-links">
+    <section id="offers">
+        <div class="offers">
+            <div>
+                <img src="https://img.freepik.com/vektoren-kostenlos/rabatt-konzept-illustration_114360-1852.jpg?w=826&t=st=1697150559~exp=1697151159~hmac=498edeef55f55665024b044eac350337a81350ab81e9a72fb569484647dd40c5"
+                    class="img-off">
+            </div>
+            <div class="offers-text">
+                <h2 class="fw-bold"> Offers </h2>
+                <p> Explore our latest offers and discounts on a wide range of second-hand treasures. Don't miss out on
+                    fantastic deals! Stay in the loop with the latest deals and exclusive offers. Subscribe to our
+                    newsletter and never miss out on a great find.
+                </p>
+                <form (ngSubmit)="subscribe()">
+                    <!--label for="email">Enter your email</label-->
+                    <input type="email" id="email" name="email" [(ngModel)]="email" required placeholder="Your Email">
+                    <button class="submit-button"> Submit </button>
+                    <p *ngIf="subscriptionSuccess">
+                        <i>Thank you for subscribing to our newsletter!
+                            <br>You'll receive the latest updates and special offers directly in your inbox.
+                            <br>P.S: We respect your privacy
+                        </i>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="mobile-app">
+        <div class="mobile-app">
+            <div class="mobile-app-text">
+                <h2 class="fw-bold"> Mobile App</h2>
+                <p>Shop On-The-Go with Our Mobile App
+                    <br>Download our mobile app for a seamless shopping experience. Browse, buy, and sell second-hand
+                    items
+                    right from your smartphone, tablets or desktop
+                </p>
+            </div>
+            <div class="download-buttons">
+                <div></div>
+                <button class="ios-button"><i class="fab fa-apple fa-3x"></i>Download on the App Store</button>
+                <button class="android-button"><i class="fab fa-android fa-3x"></i>Get it on Google Play Store</button>
+                <button class="windows-button"><i class="fab fa-windows fa-3x"></i>Download for Windows</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="accessibility">
+        <div class="accessibility">
+            <div class="accessibility-text">
+                <h2 class="fw-bold">Accessibility</h2>
+                <p>Accessibility Matters!
+                    <br>We are committed to making SecondHandHub accessible to everyone.
+                    Enhance accessibility with our <span class="bold-text">high-contrast mode</span> for better
+                    readability, ensuring complete keyboard navigation, and providing descriptive alt text for images,
+                    creating an inclusive user experience for all.
+                    <br><u>Learn more about our accessibility features and initiatives.</u>
+                </p>
+            </div>
+            <div>
+                <img src="https://img.freepik.com/fotos-kostenlos/lupe-auf-schwarzer-tastatur_93675-129659.jpg?w=826&t=st=1697150375~exp=1697150975~hmac=6f0d89452f65123cafe9da9a62134cdfb3aa83ed7bb32a90a7cb5396f1f11a34"
+                    class="img-acc">
+            </div>
+        </div>
+    </section>
+
+</div>

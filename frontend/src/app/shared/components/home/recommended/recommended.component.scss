@@ -1,0 +1,48 @@
+.price {
+    text-align: right;
+}
+
+.nav, .nav-tabs {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    padding-left: 50px;
+    max-width: 100%;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    cursor: pointer;
+}
+
+.nav::-webkit-scrollbar,
+.nav-tabs::-webkit-scrollbar {
+    display: none; 
+}
+
+.container{
+  max-width: 100%;
+}
+
+
+
+  nav{
+    max-width: 70%;
+  }
+
+  h3{
+    text-wrap: nowrap;
+  }
+
+  @media screen and (max-width: 991px) {
+    .priceInfos {
+      display: flex;
+      text-wrap: nowrap;
+    }
+   .tabs-header{
+    width: 100% !important;
+    display: block !important;
+   }
+    nav, .nav-tabs {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }

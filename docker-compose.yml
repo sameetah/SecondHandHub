@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  general-mariadb:
+    hostname: general-mariadb
+    image: mariadb:latest
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      - TZ=Europe/Berlin
+      - MARIADB_USER=user
+      - MARIADB_PASSWORD=pass
+      - MARIADB_DATABASE=db
+      - MARIADB_ROOT_PASSWORD=pass123
+    ports:
+      - "3309:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    environment:
+      - PMA_HOST=general-mariadb
+      - PMA_PORT=3306
+      - PMA_USER=user
+      - PMA_PASSWORD=pass
+    ports:
+      - "8000:80"
+
+volumes:
+  db-data:

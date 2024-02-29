@@ -1,0 +1,392 @@
+[
+    {
+        "name": "Technology",
+        "icon": "fa fa-microchip",
+        "subCategories": [
+            {
+                "name": "Computers",
+                "subSubCategories": [
+                    { "name": "Laptops" },
+                    { "name": "Desktops" },
+                    { "name": "Tablets" }
+                ]
+            },
+            {
+                "name": "Mobile Devices",
+                "subSubCategories": [
+                    { "name": "Smartphones" },
+                    { "name": "Smartwatches" },
+                    { "name": "Fitness Trackers" }
+                ]
+            },
+            {
+                "name": "Software",
+                "subSubCategories": [
+                    { "name": "Operating Systems" },
+                    { "name": "Applications" },
+                    { "name": "Games" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Fashion",
+        "icon": "fa fa-tshirt",
+        "subCategories": [
+            {
+                "name": "Men",
+                "subSubCategories": [
+                    { "name": "Shirts" },
+                    { "name": "Trousers" },
+                    { "name": "Accessories" }
+                ]
+            },
+            {
+                "name": "Women",
+                "subSubCategories": [
+                    { "name": "Dresses" },
+                    { "name": "Handbags" },
+                    { "name": "Jewelry" }
+                ]
+            },
+            {
+                "name": "Kids",
+                "subSubCategories": [
+                    { "name": "Schoolwear" },
+                    { "name": "Toys" },
+                    { "name": "Footwear" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Automotive",
+        "icon": "fa fa-car",
+        "subCategories": [
+            {
+                "name": "Cars",
+                "subSubCategories": [
+                    { "name": "SUVs" },
+                    { "name": "Sedans" },
+                    { "name": "Convertibles" }
+                ]
+            },
+            {
+                "name": "Motorcycles",
+                "subSubCategories": [
+                    { "name": "Cruisers" },
+                    { "name": "Sport" },
+                    { "name": "Touring" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Home & Living",
+        "icon": "fa fa-home",
+        "subCategories": [
+            {
+                "name": "Furniture",
+                "subSubCategories": [
+                    { "name": "Sofa" },
+                    { "name": "Dining Tables" },
+                    { "name": "Beds" }
+                ]
+            },
+            {
+                "name": "Appliances",
+                "subSubCategories": [
+                    { "name": "Washing Machines" },
+                    { "name": "Refrigerators" },
+                    { "name": "Microwaves" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Books & Learning",
+        "icon": "fa fa-book",
+        "subCategories": [
+            {
+                "name": "Genres",
+                "subSubCategories": [
+                    { "name": "Science Fiction" },
+                    { "name": "History" },
+                    { "name": "Mystery" }
+                ]
+            },
+            {
+                "name": "Educational",
+                "subSubCategories": [
+                    { "name": "Science" },
+                    { "name": "Mathematics" },
+                    { "name": "Literature" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Health & Wellness",
+        "icon": "fa fa-heartbeat",
+        "subCategories": [
+            {
+                "name": "Fitness",
+                "subSubCategories": [
+                    { "name": "Yoga" },
+                    { "name": "Gym Equipment" },
+                    { "name": "Supplements" }
+                ]
+            },
+            {
+                "name": "Personal Care",
+                "subSubCategories": [
+                    { "name": "Skincare" },
+                    { "name": "Haircare" },
+                    { "name": "Oral Care" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Travel & Tourism",
+        "icon": "fa fa-plane",
+        "subCategories": [
+            {
+                "name": "Destinations",
+                "subSubCategories": [
+                    { "name": "Beaches" },
+                    { "name": "Mountains" },
+                    { "name": "Historical Sites" }
+                ]
+            },
+            {
+                "name": "Travel Gear",
+                "subSubCategories": [
+                    { "name": "Backpacks" },
+                    { "name": "Travel Kits" },
+                    { "name": "Maps & Guides" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Music & Entertainment",
+        "icon": "fa fa-music",
+        "subCategories": [
+            {
+                "name": "Genres",
+                "subSubCategories": [
+                    { "name": "Rock" },
+                    { "name": "Jazz" },
+                    { "name": "Pop" }
+                ]
+            },
+            {
+                "name": "Instruments",
+                "subSubCategories": [
+                    { "name": "Guitars" },
+                    { "name": "Pianos" },
+                    { "name": "Drums" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Food & Beverages",
+        "icon": "fa fa-utensils",
+        "subCategories": [
+            {
+                "name": "Cuisines",
+                "subSubCategories": [
+                    { "name": "Italian" },
+                    { "name": "Chinese" },
+                    { "name": "Indian" }
+                ]
+            },
+            {
+                "name": "Drinks",
+                "subSubCategories": [
+                    { "name": "Coffees" },
+                    { "name": "Teas" },
+                    { "name": "Juices" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Sports & Recreation",
+        "icon": "fa fa-basketball-ball",
+        "subCategories": [
+            {
+                "name": "Team Sports",
+                "subSubCategories": [
+                    { "name": "Football" },
+                    { "name": "Basketball" },
+                    { "name": "Cricket" }
+                ]
+            },
+            {
+                "name": "Outdoor Activities",
+                "subSubCategories": [
+                    { "name": "Hiking" },
+                    { "name": "Cycling" },
+                    { "name": "Fishing" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Gardening",
+        "icon": "fa fa-leaf",
+        "subCategories": [
+            {
+                "name": "Plants",
+                "subSubCategories": [
+                    { "name": "Flowers" },
+                    { "name": "Trees" },
+                    { "name": "Shrubs" }
+                ]
+            },
+            {
+                "name": "Tools",
+                "subSubCategories": [
+                    { "name": "Pruners" },
+                    { "name": "Mowers" },
+                    { "name": "Watering Cans" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Finance & Investments",
+        "icon": "fa fa-dollar-sign",
+        "subCategories": [
+            {
+                "name": "Banking",
+                "subSubCategories": [
+                    { "name": "Savings Accounts" },
+                    { "name": "Credit Cards" },
+                    { "name": "Loans" }
+                ]
+            },
+            {
+                "name": "Stock Market",
+                "subSubCategories": [
+                    { "name": "Equities" },
+                    { "name": "Bonds" },
+                    { "name": "Commodities" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Real Estate",
+        "icon": "fa fa-building",
+        "subCategories": [
+            {
+                "name": "Residential",
+                "subSubCategories": [
+                    { "name": "Houses" },
+                    { "name": "Apartments" },
+                    { "name": "Condos" }
+                ]
+            },
+            {
+                "name": "Commercial",
+                "subSubCategories": [
+                    { "name": "Offices" },
+                    { "name": "Retail Spaces" },
+                    { "name": "Warehouses" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Education & Learning",
+        "icon": "fa fa-graduation-cap",
+        "subCategories": [
+            {
+                "name": "Subjects",
+                "subSubCategories": [
+                    { "name": "Physics" },
+                    { "name": "Chemistry" },
+                    { "name": "Mathematics" }
+                ]
+            },
+            {
+                "name": "Online Courses",
+                "subSubCategories": [
+                    { "name": "Programming" },
+                    { "name": "Graphic Design" },
+                    { "name": "Marketing" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Pets & Animals",
+        "icon": "fa fa-paw",
+        "subCategories": [
+            {
+                "name": "Domestic Pets",
+                "subSubCategories": [
+                    { "name": "Dogs" },
+                    { "name": "Cats" },
+                    { "name": "Birds" }
+                ]
+            },
+            {
+                "name": "Wildlife",
+                "subSubCategories": [
+                    { "name": "Mammals" },
+                    { "name": "Reptiles" },
+                    { "name": "Aquatic Life" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Crafts & DIY",
+        "icon": "fa fa-paint-brush",
+        "subCategories": [
+            {
+                "name": "Art Supplies",
+                "subSubCategories": [
+                    { "name": "Paints" },
+                    { "name": "Brushes" },
+                    { "name": "Canvases" }
+                ]
+            },
+            {
+                "name": "Handmade Crafts",
+                "subSubCategories": [
+                    { "name": "Pottery" },
+                    { "name": "Knitting" },
+                    { "name": "Jewelry Making" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Event Planning",
+        "icon": "fa fa-calendar-alt",
+        "subCategories": [
+            {
+                "name": "Occasions",
+                "subSubCategories": [
+                    { "name": "Weddings" },
+                    { "name": "Birthdays" },
+                    { "name": "Anniversaries" }
+                ]
+            },
+            {
+                "name": "Supplies",
+                "subSubCategories": [
+                    { "name": "Decorations" },
+                    { "name": "Catering" },
+                    { "name": "Music & Entertainment" }
+                ]
+            }
+        ]
+    }
+]

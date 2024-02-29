@@ -1,0 +1,23 @@
+.get-help > * {
+    //font-size: x-large;
+    padding-bottom: 5rem;
+    color: black;
+}
+
+.get-help {
+    margin: 5% 25%
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 30% 0 20%;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    background-color: #333;
+}

@@ -1,0 +1,58 @@
+<section
+  class="py-5 mb-5"
+  style="background: url(images/background-pattern.jpg)"
+>
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between"></div>
+  </div>
+</section>
+<div class="container-fluid">
+  <div class="row g-5">
+    <aside class="col-md-2 custom-sidebar">
+      <div class="sidebar">
+        <div class="widget-product-categories pt-5">
+          <h5 class="widget-title">{{ selectedCategoryName }}</h5>
+          <ul class="product-categories sidebar-list list-unstyled">
+            <li *ngFor="let category of categories" class="cat-item">
+              <a
+                (click)="
+                  toggleExpansion(category); displaySubSubCategory(category)
+                "
+                class="nav-link category-link"
+              >
+                {{ category.name }}
+              </a>
+              <ul *ngIf="category.expanded">
+                <li *ngFor="let subCategory of category.subCategories">
+                  <a
+                    (click)="
+                      toggleExpansion(subCategory);
+                      displaySubSubCategory(subCategory)
+                    "
+                    class="nav-link"
+                  >
+                    {{ subCategory.name }}
+                  </a>
+                  <ul *ngIf="subCategory.expanded">
+                    <li
+                      *ngFor="
+                        let subSubCategory of subCategory.subSubCategories
+                      "
+                    >
+                      <a
+                        (click)="displaySubSubCategory(subSubCategory)"
+                        class="nav-link"
+                      >
+                        {{ subSubCategory.name }}
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>

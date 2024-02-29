@@ -1,0 +1,332 @@
+<div class="container">
+  <div class="chat-area">
+    <!-- char-area -->
+    <section class="message-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="chat-area">
+              <!-- chatlist -->
+              <div
+                class="chatlist"
+                [ngClass]="{
+                  active: !isChatlistHidden,
+                  hidden: isChatlistHidden
+                }"
+              >
+                <div class="modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="chat-header">
+                      <div class="msg-search">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inlineFormInputGroup"
+                          placeholder="Search"
+                          aria-label="search"
+                          [(ngModel)]="searchTerm"
+                          (ngModelChange)="searchChats()"
+                        />
+                      </div>
+
+                      <ul class="nav nav-tabs mb-2" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button
+                            class="nav-link active"
+                            id="Open-tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#Open"
+                            type="button"
+                            role="tab"
+                            aria-controls="Chats"
+                            aria-selected="true"
+                          >
+                            Chats
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="modal-body">
+                      <!-- chat-list -->
+                      <div class="chat-lists">
+                        <!-- chat-list -->
+                        <div *ngIf="searchedChats.length > 0" class="chat-list">
+                          <div
+                            *ngFor="let chat of searchedChats"
+                            (click)="setActiveChat(chat)"
+                            [ngClass]="{ activeChat: chat === activeChat }"
+                            class="d-flex align-items-center mb-2 chat-entry"
+                          >
+                            <div class="flex-shrink-0">
+                              <img
+                                class="product-image img-fluid rounded-circle image-round"
+                                [src]="chat.product.imageUrl"
+                                alt="user img"
+                              />
+                            </div>
+                            <div class="flex-grow-1 ms-3 chatlist-infos">
+                              <h3>
+                                {{
+                                  loggedInUser!.id === chat.user1.id
+                                    ? chat.user2.firstName
+                                    : chat.user1.firstName
+                                }}
+                              </h3>
+                              <p>{{ chat.product.title }}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="chat-list"
+                          *ngIf="searchedChats.length <= 0"
+                        >
+                          <p>No result!</p>
+                        </div>
+                        <!-- chat-list -->
+                      </div>
+                      <!-- chat-list -->
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  class="chatListButton btn btn-danger"
+                  (click)="hideChatlist()"
+                >
+                  <i
+                    [ngClass]="{
+                      rotate: !isChatlistHidden,
+                      'rotate-back': isChatlistHidden
+                    }"
+                    class="fa fa-angle-right"
+                    style="font-size: 20px"
+                  ></i>
+                </button>
+              </div>
+              <!-- chatlist -->
+
+              <!-- chatbox -->
+              <div class="chatbox">
+                <div class="modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="msg-head">
+                      <div class="row header-half">
+                        <div class="col-8">
+                          <div class="d-flex align-items-center">
+                            <span class="chat-icon">
+                              <img
+                                class="img-fluid"
+                                [src]="
+                                  loggedInUser!.id === activeChat!.user1.id
+                                    ? activeChat!.user2.imageUrl
+                                    : activeChat!.user1.imageUrl
+                                "
+                                alt="image title"
+                            /></span>
+                            <div class="flex-shrink-0"></div>
+                            <div class="flex-grow-1 ms-3">
+                              <h3>
+                                {{
+                                  loggedInUser!.id === activeChat!.user1.id
+                                    ? activeChat!.user2.firstName
+                                    : activeChat!.user1.firstName
+                                }}
+                              </h3>
+                              <p class="small">Member since:</p>
+
+                              <p>
+                                {{
+                                  (loggedInUser!.id === activeChat!.user1.id
+                                    ? activeChat!.user2.joined
+                                    : activeChat!.user1.joined
+                                  ) | relativeTime
+                                }}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <ul class="moreoption">
+                            <li class="navbar nav-item dropdown">
+                              <a
+                                class="nav-link dropdown-toggle"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                ></a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">Action</a></li>
+                                <li>
+                                  <a class="dropdown-item">Another action</a>
+                                </li>
+                                <li>
+                                  <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                  <a class="dropdown-item"
+                                    >Something else here</a
+                                  >
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="row header-half">
+                        <div class="col-8">
+                          <div class="d-flex align-items-center">
+                            <span class="chat-icon"></span>
+                            <div class="flex-shrink-0">
+                              <img
+                                class="img-fluid rounded-circle"
+                                [src]="activeChat!.product.imageUrl"
+                                alt="user img"
+                              />
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                              <h3>{{ activeChat!.product.title }}</h3>
+                              <p class="small">Online since:</p>
+                              <p>
+                                {{
+                                  activeChat!.product.createdAt | relativeTime
+                                }}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <ul class="moreoption">
+                            <li class="navbar nav-item dropdown">
+                              <a
+                                class="nav-link dropdown-toggle"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                ></a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item">Action</a></li>
+                                <li>
+                                  <a class="dropdown-item">Another action</a>
+                                </li>
+                                <li>
+                                  <hr class="dropdown-divider" />
+                                </li>
+                                <li>
+                                  <a class="dropdown-item"
+                                    >Something else here</a
+                                  >
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="msg-body">
+                        <ul>
+                          <div *ngFor="let message of chatMessages">
+                            <li
+                              *ngIf="message.sender.id === loggedInUser?.id"
+                              class="sender"
+                            >
+                              <img
+                                *ngIf="message.imageUrl"
+                                src="{{ message.imageUrl }}"
+                                style="
+                                  width: 100px;
+                                  height: 100px;
+                                  border-radius: 5%;
+                                  object-fit: cover;
+                                "
+                                alt=""
+                              />
+                              <p *ngIf="!message.imageUrl">
+                                {{ message.content }}
+                              </p>
+                              <span class="time">{{
+                                message.sentTimestampMillis | relativeTime
+                              }}</span>
+                            </li>
+                            <li
+                              *ngIf="message.sender.id !== loggedInUser?.id"
+                              class="repaly"
+                            >
+                              <img
+                                *ngIf="message.imageUrl"
+                                src="{{ message.imageUrl }}"
+                                style="
+                                  width: 100px;
+                                  height: 100px;
+                                  border-radius: 5%;
+                                  object-fit: cover;
+                                "
+                                alt=""
+                              />
+
+                              <p *ngIf="!message.imageUrl">
+                                {{ message.content }}
+                              </p>
+                              <span class="time">{{
+                                message.sentTimestampMillis | relativeTime
+                              }}</span>
+                            </li>
+                          </div>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="send-box">
+                      <form action="">
+                        <input
+                          type="text"
+                          class="form-control"
+                          aria-label="message…"
+                          placeholder="Write message…"
+                          [(ngModel)]="messageToSend"
+                          name="message"
+                        />
+                       
+                        <button (click)="addMessage()" type="button">
+                          <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                          Send
+                        </button>
+                      </form>
+
+                      <div class="send-btns">
+                        <div class="attach">
+                          <div class="button-wrapper">
+                            <span class="label">
+                              <img
+                                class="img-fluid"
+                                src="https://mehedihtml.com/chatbox/assets/img/upload.svg"
+                                alt="image title"
+                              />
+                             Image </span
+                            ><input
+                              type="file"
+                              name="upload"
+                              id="upload"
+                              class="upload-box"
+                              (change)="selectFile($event)"
+                              placeholder="Upload File"
+                              aria-label="Upload File"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- chatbox -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- char-area -->
+  </div>
+</div>

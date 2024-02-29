@@ -1,0 +1,129 @@
+<section
+  class="py-sm-0 py-md-5 mb-md-5"
+  style="background: url(images/background-pattern.jpg)"
+>
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between">
+      <h1 class="page-title pb-2">Searching results</h1>
+    </div>
+  </div>
+</section>
+
+<div class="shopify-grid">
+  <div class="container-fluid">
+    <div class="row g-5">
+      <aside class="sideBar col-12 col-sm-4 col-lg-2">
+        <div class="sidebar">
+          <div class="widget-menu">
+            <div class="widget-search-bar">
+              <form
+                class="searchForm pb-4"
+                [formGroup]="searchForProducts"
+                (ngSubmit)="onSubmit()"
+              >
+                <mat-form-field class="custom-width-form-field">
+                  <mat-label>Keyword</mat-label>
+                  <input
+                    matInput
+                    [(ngModel)]="query"
+                    #keyword
+                    name="keyword"
+                    formControlName="keyword"
+                  />
+                </mat-form-field>
+
+                <mat-form-field class="custom-width-form-field">
+                  <mat-label>Category</mat-label>
+                  <mat-select matNativeControl formControlName="categoryInput">
+                    <mat-option [value]="">All</mat-option>
+                    <mat-option
+                      *ngFor="let category of categories"
+                      [value]="category.name"
+                      >{{ category.name }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="custom-width-form-field">
+                  <mat-label>Location</mat-label>
+                  <mat-select matNativeControl formControlName="locationInput">
+                    <mat-option [value]="">All</mat-option>
+                    <mat-option
+                      *ngFor="let location of locations"
+                      [value]="location"
+                      >{{ location }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-form-field class="custom-width-form-field">
+                  <mat-label>Min price</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    #minPriceInput
+                    name="minPriceInput"
+                    formControlName="minPriceInput"
+                  />
+                </mat-form-field>
+
+                <mat-form-field class="custom-width-form-field">
+                  <mat-label>Max price</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    #maxPriceInput
+                    name="maxPriceInput"
+                    formControlName="maxPriceInput"
+                  />
+                </mat-form-field>
+
+                <button
+                  mat-raised-button
+                  class="border-white bg-white centerButton"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="col-lg-10 col-sm-8 col-12">
+        <div
+          class="product-grid row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
+        >
+          <div *ngFor="let product of products" class="col-12">
+            <div class="product-item">
+              <figure>
+                <a (click)="navigateToProduct(product)" title="Product Title">
+                  <img [src]="product.imageUrl" class="tab-image" />
+                </a>
+              </figure>
+              <div class="d-flex align-items-center justify-content-between">
+                <h3>
+                  {{
+                    product.title.length > 16
+                      ? (product.title | slice : 0 : 16) + "..."
+                      : product.title
+                  }}
+                </h3>
+                <span class="price">{{ product.price | EUR }}</span>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="qty">{{ product.createdAt | relativeTime }}</span>
+                <a class="rating nav-link">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="products.length === 0">
+            <h3 class="noResultsFoundSection">No results found</h3>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

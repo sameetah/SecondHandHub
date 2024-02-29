@@ -1,0 +1,25 @@
+<div class="site-header">
+    <div class="site-header-top page-wraper">
+        <h1 (click)="navigateHome()">{{pageTitle}}</h1>
+        <div class="menu">
+            <button (click)="openLoginForm()" class="btn btn-dark" style="margin: 10px"> Login</button> 
+
+            <button (click)="logout()" class="btn btn-dark" style="margin: 10px"> Logout</button> 
+        </div>
+    </div>
+    <div class="searchBar">
+    <div class="searchBar-content page-wraper">
+        <div>asdasd</div>
+        <div class="dropDown">
+            <button class="dropbtn btn btn-dark">Menu</button>
+            <div class="dropdown-content">
+                <a   class="btn btn-light" (click)="navigateToMyProducts()">My Products</a>
+                <a class="btn btn-light" (click)="navigateToMyDashboard()">Dashboard</a>
+                <a class="btn btn-light" (click)="navigateToMyChats()">Chats</a>
+                <a class="btn btn-light" (click)="addProduct()">Add a Prodcut</a>
+
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+
+
+<section class="py-5 overflow-hidden">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div
+          class="section-header d-flex flex-wrap justify-content-between mb-5"
+        >
+          <h2 class="section-title">Category</h2>
+
+          <div class="d-flex align-items-center">
+            <a class="btn-link text-decoration-none">View All Categories →</a>
+            <div class="swiper-buttons">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center my-3">
+      <div class="row mx-auto my-auto justify-content-center">
+        <div class="">
+          <p-carousel
+            [value]="products"
+            [circular]="false"
+            [responsiveOptions]="responsiveOptions"
+            [showIndicators]="false"
+            [circular]="true"
+          >
+            <ng-template let-relatedProduct pTemplate="item">
+              <div class="product-item">
+                <figure>
+                  <a
+                  [routerLink]="['/product', relatedProduct.id]"
+                    title="Product Title"
+                  >
+                    <img
+                      [src]="relatedProduct.imageUrl"
+                      class="tab-image"
+                    />
+                  </a>
+                </figure>
+                <div
+                  class="d-flex align-items-center justify-content-between"
+                >
+                  <h3>
+                    {{
+                      relatedProduct.title.length > 16
+                        ? (relatedProduct.title | slice : 0 : 16) + "..."
+                        : relatedProduct.title
+                    }}
+                  </h3>
+                  <span class="price">{{ relatedProduct.price }} €</span>
+                </div>
+
+                <div
+                  class="d-flex align-items-center justify-content-between"
+                >
+                  <span class="qty">{{
+                    relatedProduct.createdAt | relativeTime
+                  }}</span>
+                  <a class="rating nav-link">Contact</a>
+                </div>
+              </div>
+            </ng-template>
+          </p-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

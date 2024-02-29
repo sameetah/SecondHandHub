@@ -1,0 +1,19 @@
+<div class="row coverSection">
+    <div class="col-6 col-md-4 offset-3 offset-md-4 searchSection">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button (click)="submitSearch(searchInput.value)" class="btn btn-outline-secondary searchBtn" type="button">
+            Search
+          </button>
+        </div>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search Product"
+          aria-label=""
+          aria-describedby="basic-addon1"
+          #searchInput
+        />
+      </div>
+    </div>
+  </div>

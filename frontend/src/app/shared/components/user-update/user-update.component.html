@@ -1,0 +1,79 @@
+<section id="login-form" class="py-5">
+  <div class="container-sm">
+    <div style="text-align: center;">
+    <h5 class="text-uppercase mb-4">Edit User</h5></div>
+    <div class="row ">
+      <div class="col p-5 border shadow-sm">
+        <div class="userImage">
+          <div *ngIf="isUploading" class="loading-icon">
+            <img src="../../../../../assets/images/Spinner-2.gif" alt="Loading...">
+          </div>
+          <label for="upload" class="rounded-image-button" *ngIf="!isUploading">
+            <img [src]="editUser.imageUrl != ''? editUser.imageUrl : '../../../../../assets/images/header/logo.png'" alt="Upload" style="object-fit: cover" class="img-fluid rounded-circle">
+          </label>
+        </div>
+        
+      <input
+          type="file"
+          name="upload"
+          id="upload"
+          class="d-none"
+          (change)="selectFile($event)"
+          aria-label="Upload File"
+      />
+      
+      <input
+          type="file"
+          name="upload"
+          id="upload"
+          class="d-none"
+          (change)="selectFile($event)"
+          aria-label="Upload File"
+      />
+      
+       
+        <form [formGroup]="editForm" id="form" class="form-group flex-wrap">
+          <div class="col-12 pb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              formControlName="firstName"
+              placeholder="First Name"
+            />
+          </div>
+          <div class="col-12 pb-3">
+            <label for="secondName" class="form-label">Second Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="secondName"
+              formControlName="secondName"
+              placeholder="Second Name"
+            />
+          </div>
+          <div class="col-12">
+  
+            <button
+              data-dismiss="modal"
+              class="btn btn-primary text-uppercase w-100 mt-2"
+              (click)="save()"
+            >
+              Save changes
+            </button>
+            <button
+            type="button"
+            class="btn btn-secondary text-uppercase w-100 mt-2"
+            data-dismiss="modal"
+            (click)="close()"
+
+          >
+            Close
+          </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

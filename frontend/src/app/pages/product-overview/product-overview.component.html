@@ -1,0 +1,106 @@
+<section id="selling-product" class="single-product mt-0 mt-md-5">
+  <div class="container-fluid">
+
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <div class="row flex-column-reverse flex-lg-row">
+          <div class="col-md-12 col-lg-2">
+            <!-- product-thumbnail-slider -->
+            <div class="swiper product-thumbnail-slider">
+              <div class="swiper-wrapper">
+                <div (click)="setMainImage(image)" *ngFor="let image of productImages" class="swiper-slide">
+                  <img src="{{image}}" alt="" class="thumb-image img-fluid">
+                </div>
+
+              </div>
+            </div>
+            <!-- / product-thumbnail-slider -->
+          </div>
+          <div class="col-md-12 col-lg-10">
+            <!-- product-large-slider -->
+            <div class="swiper product-large-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="image-zoom" data-scale="2.5" data-image="images/product-large-1.jpg"><img
+                      src="{{product.imageUrl}}" alt="product-large" class="main-picture img-fluid"></div>
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <!-- / product-large-slider -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="product-info">
+          <div class="element-header">
+            <h2 itemprop="name" class="display-6">{{product.title}}</h2>
+
+          </div>
+          <div class="product-price pt-3 pb-3">
+            <strong class="text-primary display-6 fw-bold">{{product.price}} €</strong>
+          </div>
+          <p>{{product.description}}</p>
+
+          <div class="qty-button d-flex flex-wrap pt-3">
+            <button (click)="openMessageForm()" type="submit" class="btn btn-primary py-3 px-4 text-uppercase me-3 mt-3">Make an offer</button>
+            <button 
+            class="btn btn-sm py-3 px-2 text-uppercase me-3 mt-3" (click)="isProductInFavorites ? removeFromFavorites() : addToFavorites()">
+            <i [class]="isProductInFavorites ? 'fa fa-heart fa-lg' : 'far fa-heart fa-lg'" aria-hidden="true"></i>
+            {{ buttonStatus }}
+          </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-info-tabs py-5">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="d-flex flex-column flex-md-row align-items-start gap-5">
+        <div class="nav flex-row flex-wrap flex-md-column nav-pills me-3 col-lg-3" id="v-pills-tab" role="tablist"
+          aria-orientation="vertical">
+          <button class="nav-link text-start active" id="v-pills-reviews-tab" data-bs-toggle="pill"
+            data-bs-target="#v-pills-reviews" type="button" role="tab" aria-controls="v-pills-reviews"
+            aria-selected="false">Seller infos</button>
+        </div>
+        <div class="tab-content" id="v-pills-tabContent">
+
+
+          <div class="tab-pane fade show active" id="v-pills-reviews" role="tabpanel"
+            aria-labelledby="v-pills-reviews-tab" tabindex="0">
+            <div class="review-box d-flex flex-wrap">
+              <div class="col d-flex  gap-3">
+                <div class="row">
+                  <div class="image-holder">
+                    <img
+                      [src]="product.user.imageUrl !='' ? product.user.imageUrl : '../../../assets/images/header/logo.png'"
+                      alt="review" class="img-fluid rounded-circle"
+                      style="width: 80px;height: 80px; object-fit: cover;">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="review-content">
+                    <div class="row review-header">
+                      <span class="author-name">{{product.user.firstName}}</span>
+                      <span class="review-date">– {{product.user.joined | relativeTime}}</span>
+                    </div>
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-related-products></app-related-products>

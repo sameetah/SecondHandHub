@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar for small screens -->
+    <div
+      class="col-12 d-flex d-md-none align-items-center justify-content-center vh-100 mt-4 mb-4"
+    >
+      <div class="mobile-sidebar-container">
+        <app-sidebar></app-sidebar>
+      </div>
+    </div>
+    <!-- Sidebar for larger screens -->
+    <div class="col-md-3 d-none d-md-block">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-md-9 custom-margin">
+      <section
+        class="py-5 mb-5"
+        style="background: url(images/background-pattern.jpg)"
+      >
+        <div class="container-fluid">
+          <div class="d-flex justify-content-between">
+            <h1 class="page-title pb-2"></h1>
+          </div>
+        </div>
+      </section>
+
+      <main class="col-md-10">
+        <div class="filter-shop d-flex justify-content-between">
+          <div class="showing-product">
+            <p>{{ products.length }} results</p>
+          </div>
+        </div>
+
+        <div
+          class="product-grid row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
+        >
+          <div *ngFor="let product of products" class="col">
+            <div class="product-item">
+              <figure>
+                <a
+                  [routerLink]="['/product', product.id]"
+                  title="{{ product.title }}"
+                >
+                  <img [src]="product.imageUrl" class="tab-image" />
+                </a>
+              </figure>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <h3>
+                  {{
+                    product.title.length > 16
+                      ? (product.title | slice : 0 : 16) + "..."
+                      : product.title
+                  }}
+                </h3>
+                <span class="price">{{ product.price }} €</span>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="qty">{{ product.createdAt | relativeTime }}</span>
+                <a class="rating nav-link">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

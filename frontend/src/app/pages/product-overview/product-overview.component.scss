@@ -1,0 +1,14 @@
+.img-fluid {
+  max-height: 450px;
+}
+
+.image-zoom {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  .main-picture {
+    display: none !important;
+  }
+}
