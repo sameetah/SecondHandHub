@@ -1,5 +1,5 @@
 
-# secondhandhub
+# Secondhand Hub
 
 # Introduction
 Secondhand Hub is a full-stack web application designed to facilitate the buying and selling of secondhand goods. Built with Angular for the front end and Java Spring Boot for the back end, it offers a user-friendly interface and robust backend services to ensure a smooth experience for both buyers and sellers.
