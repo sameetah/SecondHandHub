@@ -1,24 +1,50 @@
 
 # secondhandhub
-=======
-# Project 3 Scaffold
 
-Notice: Please take some time for brainstorming, wireframing and creation of your Product Backlog 😃
+# Introduction
+Secondhand Hub is a full-stack web application designed to facilitate the buying and selling of secondhand goods. Built with Angular for the front end and Java Spring Boot for the back end, it offers a user-friendly interface and robust backend services to ensure a smooth experience for both buyers and sellers.
 
-This repo contains your backend and your frontend for project 3.
+# Features
+User Authentication: Secure login and registration system to manage user accounts.
+Product Listings: Users can post items for sale, including descriptions, photos, and pricing.
+Search Functionality: Easy-to-use search features allow users to find the items they need.
+Messaging System: Buyers and sellers can communicate directly through an integrated messaging system.
 
-# Project Structure
+# Technologies
+Front End: Angular
+Back End: Java Spring Boot
+Database: MySQL
 
-- `backend` contains your Java Spring backend project
-  - It is set up to use **Maven** and **Java 17**
-  - It currently does not contain dependencies like Spring Data JPA etc. except for *Spring Web* and if you want to add more but do not know how, feel free to ask your trainer
-  - There is a GET route defined in `TestController` on `/hello` for testing
-  - It is preferred to use **IntelliJ IDEA** to open this project / folder
-  - When you launch, your backend will run on <http://85.215.57.188> by default
-- `frontend` contains your Angular frontend project
-  - remember to run `npm i` in this folder after cloning and after changes to `package.json`
-  - You should see the message from your backend in your browser after starting the frontend while your backend is already running
-  - It is preferred to use **Visual Studio Code** to open this project / folder
-  - Your frontend will be available at <http://localhost:4200> by default
+# Getting Started
+These instructions will get your copy of the project up and running on your local machine for development and testing purposes.
 
+# Prerequisites
+Install Node.js and npm (comes with Node)
+Install Java JDK 11 or above
+Install your choice of IDE (e.g., IntelliJ IDEA, Visual Studio Code)
+
+# Installation
+Clone the repository
+git clone https://github.com/yourusername/secondhand-hub.git
+
+Set up the back end
+cd secondhand-hub/backend
+./mvnw spring-boot:run
+
+Set up the front end
+cd ../frontend
+npm install
+ng serve
+
+Access the application at http://localhost:4200/
+
+# Credits
+This project was a collaborative effort by our dedicated team:
+Sameetah Fatima
+Damla Sevinc Tokdemir
+Simeon Andonov
+Kevin Janzen
+
+# Contact
+Sameetah Fatima - sameetah.umair@gmail.com
 
