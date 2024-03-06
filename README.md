@@ -40,10 +40,7 @@ Access the application at http://localhost:4200/
 
 # Credits
 This project was a collaborative effort by our dedicated team:
-Sameetah Fatima
-Damla Sevinc Tokdemir
-Simeon Andonov
-Kevin Janzen
+Sameetah Fatima, Damla Sevinc Tokdemir, Simeon Andonov and Kevin Janzen
 
 # Contact
 Sameetah Fatima - sameetah.umair@gmail.com
